@@ -3,7 +3,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import sqlite3 from "sqlite3";
 import path from "path";
 import { fileURLToPath } from "url";
-import apiBasedTools from "./api-based-tool.js";
+import jobsBasedTools from "./jobs-based-tools.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,7 +14,7 @@ const server = new McpServer({
 	version: "1.0.0",
 });
 
-apiBasedTools(server);
+jobsBasedTools(server);
 
 // Register the database schema resource
 server.registerResource(
